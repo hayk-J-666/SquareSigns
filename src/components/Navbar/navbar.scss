@@ -1,0 +1,213 @@
+// @import './../scss/style.scss';
+.menu{
+    width: 100%;
+    height: 93px;
+    background-color: rgb(255,255,255);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    right: 0;
+    &-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+.userTools{
+    display: flex;
+    align-items: center;
+    &__img{
+        margin-right: 1rem;
+    }
+}
+
+.icon-user-solid-circle:before {
+    content: "\e901";
+    font-size: 20px;
+    color: #333;
+}
+
+.icon-cart:before {
+    content: "\e93a";
+    font-size: 20px;
+    color: #333;
+}
+
+.icon-search:before {
+    content: "\e986";
+    font-size: 20px;
+    color: #333;
+}
+
+.menu-blok__navigation {
+    list-style: none;
+
+    &>li {
+        font-size: 2rem;
+        &>a {
+            color:#333
+        }
+    }
+}
+
+.menu__navigation{
+    @media (max-width: 800px) {
+        display: none;
+    }
+    &>ul{
+        padding-left: 0px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &_text{
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            color: #707070;
+            font-family: 'Helvetica';
+            text-decoration: none;
+            text-transform: capitalize;
+            @media (min-width: 800px){
+                margin-right: 3rem;
+            }
+        }
+    }
+    &__btn{
+        background-color: rgb(255,255,255);
+        border: none;
+        cursor: pointer;
+        padding: 1rem;
+    }
+}
+
+.mobileuserIcon{
+    position: absolute;
+    left: 40px;
+    @media (min-width: 800px) {
+        display: none;
+    }
+}
+.userIcon{
+    @media (max-width: 800px) {
+        display: none;
+    }
+}
+.logo{
+    @media (max-width: 800px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    } 
+}
+.menu__logo{
+    height: 48px;
+}
+
+.hamburger-mb-menu{
+    display: none;
+    @media (max-width: 800px) {
+        display: block;
+        width: 17px;
+        height: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    .hamburger1, .hamburger2, .hamburger3 , .hamburger11, .hamburger22, .hamburger33{
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: black;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transition: .25s ease-in-out;
+    }
+    
+    .hamburger1 {
+        top: 0px;
+        transform-origin: center center;
+    }
+
+    .hamburger2 {
+      top: 5px;
+      transform-origin: center center;
+    }
+
+    .hamburger3 {
+      top: 10px;
+      transform-origin: center center;
+    }
+
+    .hamburger11 {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 0.6rem;
+    }
+
+    .hamburger22 {
+      width: 0%;
+      opacity: 0;
+    }
+
+    .hamburger33 {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 0.6rem;
+    }
+}
+
+.menu-blok{
+    display: none;
+    
+    &-active{
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: fixed;
+        margin-top: 78px;
+        height: calc(100vh - 78px);
+        background: rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: flex-end;
+        @media (min-width: 800px) {
+            display: none;
+        }
+    }
+    &__container{
+        width: 400px;
+        margin-right: -400px;
+        background: white;
+        animation-name: hamburgerMenu;
+        animation-duration: 1s;
+        animation-delay: .2s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+        @keyframes hamburgerMenu {
+            from {margin-right: -400px;}
+            to {margin-right: 0px;}
+        }
+    }
+}
+
